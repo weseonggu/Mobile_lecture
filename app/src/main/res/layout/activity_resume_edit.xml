@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:id="@+id/scrollView">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#06AC06"
+        app:title="이력서"
+        android:id="@+id/toolbar"/>
+    <!--간단한 정보-->
+    <!--학력-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/my_image"
+            android:layout_width="180dp"
+            android:layout_height="260dp"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="25dp">
+
+            <ImageView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/myimg"
+                android:id="@+id/img"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:id="@+id/name_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@id/my_image"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이름: "
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/name_edit"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_age"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/my_image"
+            android:layout_toRightOf="@id/name_age"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="나이: "
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:id="@+id/age_edit"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/github"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_below="@+id/name_age"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="68dp"
+            android:layout_toEndOf="@+id/my_image"
+            android:src="@drawable/githubicon" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#4C4848"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학력"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_margin="3dp"/>
+
+        <Button
+            android:id="@+id/education_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추가"
+            android:layout_marginLeft="10dp"/>
+        <Button
+            android:id="@+id/education_del_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="삭제"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/education_recyclerView"/>
+        <!--수상-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#4C4848"
+        android:layout_marginTop="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수상"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_margin="3dp"/>
+
+        <Button
+            android:id="@+id/reward_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추가"
+            android:layout_marginLeft="10dp"/>
+        <Button
+            android:id="@+id/reward_del_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="삭제"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reward_recyclerView"/>
+
+    <!--사용기술-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#4C4848"
+        android:layout_marginTop="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사용기술"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_margin="3dp"/>
+
+        <Button
+            android:id="@+id/usetech_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추가"
+            android:layout_marginLeft="10dp"/>
+        <Button
+            android:id="@+id/tech_del_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="삭제"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/usetech_recyclerView"/>
+
+    <!--경력-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#4C4848"
+        android:layout_marginTop="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="경력"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_margin="3dp"/>
+
+        <Button
+            android:id="@+id/career_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추가"
+            android:layout_marginLeft="10dp" />
+        <Button
+            android:id="@+id/career_del_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="삭제"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/career_recyclerView"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
